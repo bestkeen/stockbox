@@ -1,0 +1,38 @@
+Step 1:Creat new project
+django-admin startproject box
+
+Step 2:Creat new app on project
+cd box
+python3 manage.py startapp boxapp
+
+Step 3:Add app to project`s settings.py
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'boxapp',
+]
+
+Step 4:Project Function views
+from boxapp import views as boxapp_views
+
+urlpatterns = [
+    path('', boxapp_views.index),
+]
+
+Step 5:Add app views.py
+
+from django.http import HttpResponse
+
+def index(request):
+    return HttpResponse(u"欢迎光临 自强学堂!")
+
+Step 6:Add template file on app and add *.html on template
+
+
+
+
+
